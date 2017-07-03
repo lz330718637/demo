@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+<tr >
+<td>用户Id</td>
+<td>姓名</td>
+<td>地址</td>
+<td>年龄</td>
+</tr>
+<tr th:each="user:${userList}">
+<td><input type="checkbox" name="userId" th:value="${user.id}"/></td>
+<td th:text="${user.name}"></td>
+<td th:text="${user.address}"></td>
+<td th:text="${user.age}"></td>
+<td><a th:href="@{/update(id=${user.id})}">修改</a></td>
+<td><a th:href="@{/delete(id=${user.id})}">删除</a></td>
+</tr>
+</table>
+</body>
+</html>

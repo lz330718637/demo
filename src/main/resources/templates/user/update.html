@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>更新界面</title>
+</head>
+<body>
+	<p id="info">您的个人信息</p>
+	<form th:action="@{/update}" method="post">
+		<input type="hidden" name="id" th:value="${user.id}" />
+		<table id="table">
+			<tr>
+				<td>姓名：</td>
+				<td><input type="text" name="name" th:value="${user.name}" /></td>
+			</tr>
+			<tr>
+				<td>地址：</td>
+				<td><input type="text" name="address" th:value="${user.address}" /></td>
+			</tr>
+			<tr>
+				<td>年龄：</td>
+				<td><input type="text" name="age" th:value="${user.age}" /></td>
+			</tr>
+		</table>
+		<input type="submit" th:value="保存" />
+	</form>
+</body>
+</html>

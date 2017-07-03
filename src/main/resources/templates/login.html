@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>用户登陆</title>
+</head>
+
+<style type="text/css">
+body {
+	background-color: #d0e4fe;
+}
+</style>
+
+<script type="text/javascript">
+	//这里跳转到注册页面 
+	function register() {
+		location.href="/registry";
+	}
+</script>
+
+<body>
+	<form th:action="@{/login}" method="post">
+		<table id="table" style='margin:0px auto'>
+			<tr>
+				<td>用户名:</td>
+				<td><input type="text" name="name" /></td>
+			</tr>
+			<tr>
+				<td>密 码:</td>
+				<td><input type="password" name="password" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="登陆" /></td>
+				<td><input type="button" value="注册" onclick="register()" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

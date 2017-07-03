@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>个人信息</title>
+<style type="text/css">
+body {
+	background-color: #d0e4fe;
+}
+
+#info {
+	text-align: center;
+}
+
+#table {
+	margin: 0px auto;
+}
+</style>
+
+<script type="text/javascript">
+
+function findAllUser(){
+	location.href = "/findAllUser";
+}
+</script>
+</head>
+<body>
+    
+	<p th:text="'欢迎'+ ${user.name} +'管理员'" th:if="${user.name eq '李阵'}"></p>
+	<p th:text="'欢迎' + ${user.name}" th:unless="${user.name eq '李阵'}"></p>
+	<input type="button" value="所有用户" onclick="findAllUser()" th:if="${user.name eq '李阵'}" />
+	<p id="info">您的个人信息</p>
+	<div>
+		<table id="table">
+			<tr>
+				<td>姓名：</td>
+				<td><p th:text="${user.name}"></p></td>
+			</tr>
+			<tr>
+				<td>地址：</td>
+				<td><p th:text="${user.address}"></p></td>
+			</tr>
+			<tr>
+				<td>年龄：</td>
+				<td><p th:text="${user.age}"></p></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

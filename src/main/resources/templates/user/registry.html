@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>用户注册</title>
+<style>
+body {
+	background-color: #d0e4fe;
+	text-align: center;
+}
+
+#star {
+	color: red;
+}
+
+#note {
+	color: red;
+}
+</style>
+
+<script type="text/javascript">
+	//这里使用了js非空验证,经测试不知道为什么不能用！我又用了hibernate的validation框架进行的验证
+	
+	function validate() {
+		//经过测试   该函数已经进来了   但是验证不了 
+		var userName = document.getElementById("userName");
+		if (userName.value == "" || userName == null) {
+			alert("用户名不能为空！");
+			userName.foucs();
+			return false;
+		} else {
+			return true;
+		}
+	}
+</script>
+
+</head>
+<body>
+	<p>红色*号表示为必填项!</p>
+	<form th:action="@{/registry}" method="post">
+		<table id="table"  style='margin:0px auto'>
+			<tr>
+				<td>用户名：</td>
+				<td><input type="text" name="name" id="userName"
+					onchange="validate()"/></td>
+				<td id="star">*</td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input type="password" name="password" id="password"/></td>
+			</tr>
+			<tr>
+				<td>地址：</td>
+				<td><input type="text" name="address" id="address"/></td>
+			</tr>
+			<tr>
+				<td>年龄：</td>
+				<td><input type="text" name="age" id="age"/></td>
+			</tr>
+		</table>
+		<input type="submit" value="提交"/>
+	</form>
+</body>
+</html>
