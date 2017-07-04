@@ -48,9 +48,9 @@ public class UserController {
 		return "user/update";
 	}
 	@RequestMapping(value="/update",method={RequestMethod.POST})
-	public String update(Model model,Long id,String name, String address, int age){
+	public String update(Model model,Long id,String username, String address, int age){
 		FirstUser user = userService.findUserById(id);
-		user.setName(name);
+		user.setName(username);
 		user.setAddress(address);
 		user.setAge(age);
 		//执行跟新操作

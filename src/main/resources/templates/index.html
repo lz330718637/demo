@@ -2,9 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>欢迎界面</title>
+<style type="text/css">
+#index{
+text-align:center;
+}
+
+#message{
+text-align:center;
+}
+
+</style>
 </head>
 <body>
-<h1>欢迎来到用户管理</h1>
-<p>点击<a th:href="@{/login}">这里</a>进入我的信息</p>
+<h1 id="index">欢迎来到用户管理</h1>
+<p id="message">点击<a th:href="@{/success}">这里</a>进入个人信息</p>
 </body>
 </html>

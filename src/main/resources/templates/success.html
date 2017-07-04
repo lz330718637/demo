@@ -17,17 +17,16 @@ body {
 </style>
 
 <script type="text/javascript">
-
-function findAllUser(){
-	location.href = "/findAllUser";
-}
+	function findAllUser() {
+		location.href = "/findAllUser";
+	}
 </script>
 </head>
 <body>
-    
 	<p th:text="'欢迎'+ ${user.name} +'管理员'" th:if="${user.name eq '李阵'}"></p>
 	<p th:text="'欢迎' + ${user.name}" th:unless="${user.name eq '李阵'}"></p>
-	<input type="button" value="所有用户" onclick="findAllUser()" th:if="${user.name eq '李阵'}" />
+	<input type="button" value="所有用户" onclick="findAllUser()"
+		th:if="${user.name eq '李阵'}" />
 	<p id="info">您的个人信息</p>
 	<div>
 		<table id="table">
